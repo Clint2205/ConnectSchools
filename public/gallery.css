@@ -1,0 +1,256 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #eaeaea, #c0c0c0);
+  }
+  
+  
+
+
+/* Highlight the current section in the navigation menu */
+nav a:active,
+nav a:focus,
+nav a:hover,
+nav a:target {
+  font-weight: bold;
+  color: red;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-size: x-large;
+
+}
+
+.nav-item button {
+  margin-left: auto;
+}
+
+
+#nursery-carousel {
+    
+    width: 80px;
+    margin: 0 auto;
+  }
+
+
+  #carouselExample{
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  
+  .carousel-item img {
+    height: 530px;
+    /* or any other preferred height */
+    object-fit: cover;
+    border-radius: 50px;
+    border: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+
+ 
+  .carousel-indicators li {
+    background-color: black;
+  } 
+  
+  
+
+
+h1 {
+    text-align: center;
+  }
+  
+  .gallery {
+    text-align: center;
+  }
+  
+  .gallery h2 {
+    margin-top: 40px;
+  }
+  
+  
+  .gallery-image {
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-right: 20px; /* Add margin between images */
+    border-radius: 10px; /* Add rounded border */
+  }
+  
+  .gallery-image:last-child {
+    margin-right: 0; /* Remove margin for the last image in each row */
+  }
+  
+  .gallery-image:hover {
+    transform: scale(1.05);
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .image-message {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+  
+  
+  /* CSS styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .modal-caption {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .modal-message {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #ff00ff; /* Fluorescent color */
+  }
+  
+
+#about btn{
+
+  color: white;
+}
+/* Button styles */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+.navbar-nav img{
+
+  height: 10px
+  ;
+}
+
+#about img  {
+  width: 650px;
+  height: 550px;
+  margin-left: 90px;
+  margin-top: 50px;
+  padding: 50px;
+  border-radius: 50%;
+}
+
+#virtual-tour {
+  color: white;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+  /* add font color */
+}
+
+.card-text {
+  margin-bottom: 1.5rem;
+  color: #666;
+  /* add font color */
+}
+
+#resources h2 {
+
+  color: white;
+}
+
+.embed-responsive-item {
+  border-radius: 50px;
+  padding: 10px;
+  /* add padding */
+}
+
+#contact-us {
+
+  color: white;
+}
+
+#contact-form button {
+  color: black;
+
+}
+.col-md-6 a{
+
+  color: black;
+}
+
+.hidden {
+  display: none
+}   
+#admission{
+
+  color: antiquewhite;
+  background: linear-gradient(98.3deg, rgb(0, 0, 0) 10.6%, rgb(255, 0, 0) 97.7%);
+}
+
+
+.carousel-item img {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+ 

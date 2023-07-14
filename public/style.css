@@ -1,0 +1,283 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none
+}
+
+body {
+  background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+
+
+}
+
+
+
+/* Highlight the current section in the navigation menu */
+nav a:active,
+nav a:focus,
+nav a:hover,
+nav a:target {
+  font-weight: bold;
+  color: red;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-size: x-large;
+
+}
+
+.nav-item button {
+  margin-left: auto;
+}
+
+
+#nursery-carousel {
+  width: 80px;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  height: 530px;
+  /* or any other preferred height */
+  object-fit: cover;
+  border-radius: 50px;
+  border: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-indicators li {
+  background-color: black;
+} 
+
+section.carousel-section {
+  margin-top: 6000px;
+}
+
+#about btn{
+
+  color: white;
+}
+/* Button styles */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+.navbar-nav img{
+
+  height: 10px
+  ;
+}
+
+#about img  {
+  width: 650px;
+  height: 550px;
+  margin-left: 90px;
+  margin-top: 50px;
+  padding: 50px;
+  border-radius: 50%;
+}
+
+#virtual-tour {
+  color: white;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+  /* add font color */
+}
+
+.card-text {
+  margin-bottom: 1.5rem;
+  color: #666;
+  /* add font color */
+}
+
+#resources h2 {
+
+  color: white;
+}
+
+.embed-responsive-item {
+  border-radius: 50px;
+  padding: 10px;
+  /* add padding */
+}
+
+#contact-us {
+
+  color: white;
+}
+
+#contact-form button {
+  color: black;
+
+}
+.col-md-6 a{
+
+  color: black;
+}
+
+.hidden {
+  display: none
+}   
+#admission{
+
+  color: antiquewhite;
+  background: linear-gradient(98.3deg, rgb(0, 0, 0) 10.6%, rgb(255, 0, 0) 97.7%);
+}
+
+
+#comments {
+  color: white;
+  padding: 20px;
+}
+
+#thread-list {
+  margin-top: 20px;
+}
+
+.thread {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.thread h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.thread p {
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #3e8e41;
+}
+
+button#show-less-btn {
+  margin-top: 10px;
+}
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.team-member-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.team-member-image:hover {
+  transform: scale(1.1);
+}
+
+.team-member-info {
+  flex-grow: 1;
+}
+
+/* Modal CSS */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80%;
+  text-align: center;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-caption {
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.modal-close {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.image-message {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.team-member:hover .image-message {
+  opacity: 1;
+}
+
