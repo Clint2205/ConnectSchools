@@ -70,60 +70,7 @@
   </nav>
 
 
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Go to top</button>
-  <div class="container mt-3">
-    <div class="row">
-      <div class="col-sm-12">
-        <% if (user && user.isLoggedIn) { %>
-          <h2>Welcome to the Discussion Forum, <%= user.email %>!</h2>
-
-
-          <% } else { %>
-            <h2>Welcome to the Discussion Forum!</h2>
-            <% } %>
-              <hr>
-              <h4 id="create">Create Thread</h4>
-
-              <form id="thread-form">
-                <div class="form-group">
-                  <label for="title">Title:</label>
-                  <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" required>
-                </div>
-                <div class="form-group">
-                  <label for="content">Content:</label>
-                  <textarea class="form-control" id="content" placeholder="Enter content" name="content"
-                    required></textarea>
-                </div>
-                <button type="submit" id="subthread" class="btn btn-primary">Submit</button>
-              </form>
-              <!-- ... -->
-              <hr>
-              <h4>Threads</h4>
-              <div id="thread-list">
-                <div id="thread-content">
-                  <% if (threads && threads.length> 0) { %>
-                    <% for (let i=0; i < threads.length; i++) { %>
-                      <div class="thread" style="<%= i >= 2 ? 'display: none;' : '' %>">
-                        <h5>
-                          <%= threads[i].title %>
-                        </h5>
-                        <p>
-                          <%= threads[i].content %>
-                        </p>
-                        <p>Posted by: <%= threads[i].user_ID %>
-                        </p>
-                        <p>Date: <%= threads[i].date %>
-                        </p> <!-- Add this line to display the date -->
-                      </div>
-                      <% } %>
-                        <button id="show-more-btn">Show More</button>
-                        <button id="show-less-btn" style="display: none;">Show Less</button>
-                        <% } else { %>
-                          <p>No threads found.</p>
-                          <% } %>
-                </div>
-              </div>
-
+ 
 
               <script>
                 const threadContent = document.getElementById('thread-content');

@@ -173,7 +173,7 @@
 
           <!-- Only show the link to view forum if the user is logged in -->
          
-            <a href="/loginReg" class="btn btn-primary" style="background: linear-gradient(to right, rgb(250, 52, 98), rgb(255, 75, 43));">View Forum</a>
+            <a href="/comingsoon" class="btn btn-primary" style="background: linear-gradient(to right, rgb(250, 52, 98), rgb(255, 75, 43));">View Forum</a>
       
         </div>
       </div>
@@ -190,30 +190,6 @@
   </div>
 </section>
 
-  <!-- ... -->
-  <section class="container-fluid my-4" id="comments" style="background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);">
-  <hr>
-  <h1>Forum Comments</h1>
-
-  <p>If you want to add a comment, please <a href="/loginReg">click here</a> or click on the on View Forum to login or register.</p>
-  <div id="thread-list">
-    <div id="thread-content">
-      <% if (threads && threads.length > 0) { %>
-        <% for (let i = 0; i < threads.length; i++) { %>
-          <div class="thread" style="<%= i >= 2 ? 'display: none;' : '' %>">
-            <h5><%= threads[i].title %></h5>
-            <p><%= threads[i].content %></p>
-            <p>Posted by: <%= threads[i].user_ID %></p>
-            <p>Date: <%= threads[i].date %></p> <!-- Add this line to display the date -->
-          </div>
-        <% } %>
-        <button id="show-more-btn">Show More</button>
-        <button id="show-less-btn" style="display: none;">Show Less</button>
-      <% } else { %>
-        <p>No threads found.</p>
-      <% } %>
-    </div>
-  </div>
   
 
 <script>

@@ -15,14 +15,16 @@ app.use(express.json())
 app.set('views', './views');
 
 // Get the logout message from the session
-const connectionPool = mysql.createPool({
-  connectionLimit: 1,
-  host: 'localhost',
-  user: 'ConnectSchools',
-  password: 'mbuya54321',
-  database: 'forum_users',
-  debug: false
-});
+// const connectionPool = mysql.createPool({
+//   connectionLimit: 1,
+//   host: 'connectschoolsuganda.org', // or the IP address
+//   user: 'ConnectSchools',
+//   password: 'mbuya54321',
+//   database: 'forum_users',
+//   port: 3306,
+//   debug: false
+// });
+
 
 app.use(session({
   secret: 'your_secret_key',
@@ -31,27 +33,44 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// connectionPool.getConnection((err, connection) => {
+//   if (err) {
+//     console.error('Error occurred while connecting to the database:', err);
+//     return;
+//   }
+//   console.log('Connected to the database successfully');
+//   connection.release();
+// });
+
+
 app.get('/', (req, res) => {
   // Assuming you have the user object available
-  const user = req.user; // Replace this with how you access the user object in your code
+ // const user = req.user; // Replace this with how you access the user object in your code
 
   // Retrieve all threads from the server
-  connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
-    if (error) {
-      console.error('Error occurred while retrieving threads:', error);
-      return res.status(500).json({ message: 'Internal server error' });
-    }
+ // connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
+  //  if (error) {
+   //   console.error('Error occurred while retrieving threads:', error);
+  //    return res.status(500).json({ message: 'Internal server error' });
+  //  }
 
-    const maxVisibleThreads = 5;
+   // const maxVisibleThreads = 5;
 
     // Render the forum view and pass the user and threads to it
-    res.render('index', { user: req.session.user, threads: results, maxVisibleThreads });
+   // res.render('index', { user: req.session.user, threads: results, maxVisibleThreads });
+   res.render('index');
+
   });
-});
+
 // Set up the route for the homepage
 app.get('/gallery', (req, res) => {
 
   res.render('gallery');
+
+});
+app.get('/comingsoon', (req, res) => {
+
+  res.render('comingsoon');
 
 });
 
@@ -88,7 +107,7 @@ app.post('/login', (req, res) => {
     return res.status(400).json({ message: 'Password must be at least 6 characters' });
   }
 
-  connectionPool.query("SELECT * FROM discussionusers WHERE Email = ? AND user_pass = ?", [email, password], (error, results, fields) => {
+  connectionPool.query("SELECT * FROM discussionusers WHERE email = ? AND user_pass = ?", [email, password], (error, results, fields) => {
     if (error) {
       console.error('Error occurred while connecting to the database' + JSON.stringify(error));
       return res.status(500).json({ message: 'Internal server error' });
@@ -111,59 +130,59 @@ app.post('/login', (req, res) => {
 });
 
 // GET /forum route
-app.get('/forum', (req, res) => {
-  // Check if the user is logged in
-  if (req.session.user && req.session.user.isLoggedIn) {
-    // Retrieve all threads from the server
-    connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
-      if (error) {
-        console.error('Error occurred while retrieving threads:', error);
-        return res.status(500).json({ message: 'Internal server error' });
-      }
-      const maxVisibleThreads = 5;
-      // Render the forum view and pass the user and threads to it
-      res.render('forum', { user: req.session.user, threads: results, maxVisibleThreads });
-    });
-  } else {
-    // User is not logged in, redirect to the login page
-    res.redirect('/loginReg');
-  }
-});
+// app.get('/forum', (req, res) => {
+//   // Check if the user is logged in
+//   if (req.session.user && req.session.user.isLoggedIn) {
+//     // Retrieve all threads from the server
+//     connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
+//       if (error) {
+//         console.error('Error occurred while retrieving threads:', error);
+//         return res.status(500).json({ message: 'Internal server error' });
+//       }
+//       const maxVisibleThreads = 5;
+//       // Render the forum view and pass the user and threads to it
+//       res.render('forum', { user: req.session.user, threads: results, maxVisibleThreads });
+//     });
+//   } else {
+//     // User is not logged in, redirect to the login page
+//     res.redirect('/loginReg');
+//   }
+// });
 
 // Create a new thread
-app.post('/threads', (req, res) => {
-  const { title, content } = req.body;
-  const user_ID = req.session.user.userId; // Assuming the user ID is stored in req.session.user.userId
-  const date = new Date(); // Add the current date and time
+// app.post('/threads', (req, res) => {
+//   const { title, content } = req.body;
+//   const user_ID = req.session.user.userId; // Assuming the user ID is stored in req.session.user.userId
+//   const date = new Date(); // Add the current date and time
 
-  // Insert the new thread into the database
-  connectionPool.query(
-    'INSERT INTO threads (title, content, user_ID, date) VALUES (?, ?, ?, ?)',
-    [title, content, user_ID, date],
-    (error, results, fields) => {
-      if (error) {
-        console.error('Error occurred while creating a new thread:', error);
-        return res.status(500).json({ message: 'Internal server error' });
-      }
+//   // Insert the new thread into the database
+//   connectionPool.query(
+//     'INSERT INTO threads (title, content, user_ID, date) VALUES (?, ?, ?, ?)',
+//     [title, content, user_ID, date],
+//     (error, results, fields) => {
+//       if (error) {
+//         console.error('Error occurred while creating a new thread:', error);
+//         return res.status(500).json({ message: 'Internal server error' });
+//       }
 
-      res.status(201).json({ message: 'Thread created successfully' });
-    }
-  );
-});
+//       res.status(201).json({ message: 'Thread created successfully' });
+//     }
+//   );
+// });
 
 
 // Get all threads
-app.get('/threads', (req, res) => {
-  // Retrieve all threads from the database
-  connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
-    if (error) {
-      console.error('Error occurred while retrieving threads:', error);
-      return res.status(500).json({ message: 'Internal server error' });
-    }
+// app.get('/threads', (req, res) => {
+//   // Retrieve all threads from the database
+//   connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
+//     if (error) {
+//       console.error('Error occurred while retrieving threads:', error);
+//       return res.status(500).json({ message: 'Internal server error' });
+//     }
 
-    res.json(results);
-  });
-});
+//     res.json(results);
+//   });
+// });
 
 
 
