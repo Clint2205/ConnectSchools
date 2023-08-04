@@ -1,0 +1,70 @@
+  GNU nano 3.2              connectschool.conf                         
+server {
+        server_name connectschoolsuganda.org;
+        return 301 $scheme://www.connectschoolsuganda.org$request_uri;
+}
+server {
+        server_name www.connectschoolsuganda.org;
+        root /home/mugga/nginx/sites/school/www/ConnectSchools;
+        index  index.html index.htm;
+
+        #autoindex off;
+
+    location / {
+
+        proxy_pass http://localhost:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+
+
+
+        #try_files $uri $uri/ =404;
+        #try_files $uri $uri/ /index.php$is_args$args;
+        #try_files $uri $uri/ /index.php$is_args$args;
+
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+    }
+
+
+
+  GNU nano 3.2              first_website.conf                         
+server {
+    listen 80;
+    server_name www.muzabarbers.com;
+
+    # Redirect HTTP requests to HTTPS
+   # return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name www.muzabarbers.com;
+
+    # Use the SSL certificates for www.connectschoolsuganda.org
+    #ssl_certificate /etc/letsencrypt/live/www.connectschoolsuganda.or$    #ssl_certificate_key /etc/letsencrypt/live/www.connectschoolsugand$
+    # Include the SSL options and DH parameters
+    #include /etc/letsencrypt/options-ssl-nginx.conf;
+    #ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    root /home/mugga/nginx/sites/school/www/Steven-Barbershop;
+    index index.html index.htm;
+
+
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Additional SSL/TLS configuration if required
+   
