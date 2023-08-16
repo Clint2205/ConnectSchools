@@ -43,25 +43,32 @@ connectionPool.getConnection((err, connection) => {
 
 app.get('/', (req, res) => {
   // Assuming you have the user object available
-  const user = req.user; // Replace this with how you access the user object in your code
+ // const user = req.user; // Replace this with how you access the user object in your code
 
   // Retrieve all threads from the server
-  connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
-    if (error) {
-      console.error('Error occurred while retrieving threads:', error);
-      return res.status(500).json({ message: 'Internal server error' });
-    }
+ // connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
+  //  if (error) {
+   //   console.error('Error occurred while retrieving threads:', error);
+  //    return res.status(500).json({ message: 'Internal server error' });
+  //  }
 
-    const maxVisibleThreads = 5;
+   // const maxVisibleThreads = 5;
 
     // Render the forum view and pass the user and threads to it
-    res.render('index', { user: req.session.user, threads: results, maxVisibleThreads });
+   // res.render('index', { user: req.session.user, threads: results, maxVisibleThreads });
+   res.render('index');
+
   });
-});
+
 // Set up the route for the homepage
 app.get('/gallery', (req, res) => {
 
   res.render('gallery');
+
+});
+app.get('/comingsoon', (req, res) => {
+
+  res.render('comingsoon');
 
 });
 
@@ -122,24 +129,24 @@ app.post('/login', (req, res) => {
 });
 
 // GET /forum route
-app.get('/forum', (req, res) => {
-  // Check if the user is logged in
-  if (req.session.user && req.session.user.isLoggedIn) {
-    // Retrieve all threads from the server
-    connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
-      if (error) {
-        console.error('Error occurred while retrieving threads:', error);
-        return res.status(500).json({ message: 'Internal server error' });
-      }
-      const maxVisibleThreads = 5;
-      // Render the forum view and pass the user and threads to it
-      res.render('forum', { user: req.session.user, threads: results, maxVisibleThreads });
-    });
-  } else {
-    // User is not logged in, redirect to the login page
-    res.redirect('/loginReg');
-  }
-});
+// app.get('/forum', (req, res) => {
+//   // Check if the user is logged in
+//   if (req.session.user && req.session.user.isLoggedIn) {
+//     // Retrieve all threads from the server
+//     connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
+//       if (error) {
+//         console.error('Error occurred while retrieving threads:', error);
+//         return res.status(500).json({ message: 'Internal server error' });
+//       }
+//       const maxVisibleThreads = 5;
+//       // Render the forum view and pass the user and threads to it
+//       res.render('forum', { user: req.session.user, threads: results, maxVisibleThreads });
+//     });
+//   } else {
+//     // User is not logged in, redirect to the login page
+//     res.redirect('/loginReg');
+//   }
+// });
 
 // Create a new thread
 app.post('/threads', (req, res) => {
@@ -157,24 +164,24 @@ app.post('/threads', (req, res) => {
         return res.status(500).json({ message: 'Internal server error' });
       }
 
-      res.status(201).json({ message: 'Thread created successfully' });
-    }
-  );
-});
+//       res.status(201).json({ message: 'Thread created successfully' });
+//     }
+//   );
+// });
 
 
 // Get all threads
-app.get('/threads', (req, res) => {
-  // Retrieve all threads from the database
-  connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
-    if (error) {
-      console.error('Error occurred while retrieving threads:', error);
-      return res.status(500).json({ message: 'Internal server error' });
-    }
+// app.get('/threads', (req, res) => {
+//   // Retrieve all threads from the database
+//   connectionPool.query('SELECT * FROM threads', (error, results, fields) => {
+//     if (error) {
+//       console.error('Error occurred while retrieving threads:', error);
+//       return res.status(500).json({ message: 'Internal server error' });
+//     }
 
-    res.json(results);
-  });
-});
+//     res.json(results);
+//   });
+// });
 
 
 
@@ -257,7 +264,7 @@ app.post('/', async (req, res) => {
     },
   });
   const mailOptions = {
-    from: `${req.body.name} <${req.body.email}>`,
+    //from: `${req.body.name} <${req.body.email}>`,
     to: 'swifty2205@yahoo.co.uk',
     subject: 'New Contact Form Submission from ' + req.body.email,
     text: req.body.message,
