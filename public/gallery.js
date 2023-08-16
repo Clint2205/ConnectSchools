@@ -1,3 +1,11 @@
+// Add event listeners to pause videos on page load
+window.addEventListener('load', function () {
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => {
+    video.pause();
+  });
+});
+
 // Define the gallery images
 let sections = [
     {

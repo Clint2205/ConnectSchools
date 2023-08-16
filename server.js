@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const session = require('express-session');
 const nodemailer = require('nodemailer');
 const emailValidator = require('email-validator');
@@ -18,8 +18,8 @@ app.set('views', './views');
 const connectionPool = mysql.createPool({
   connectionLimit: 1,
   host: 'localhost',
-  user: 'ConnectSchools',
-  password: 'mbuya54321',
+  user: 'MbuyaConnect',
+  password: 'Sophia54321£',
   database: 'forum_users',
   debug: false
 });
@@ -30,6 +30,16 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+connectionPool.getConnection((err, connection) => {
+  if (err) {
+    console.error('Error occurred while connecting to the database:', err);
+    return;
+  }
+  console.log('Connected to the database successfully');
+  connection.release();
+});
+
 
 app.get('/', (req, res) => {
   // Assuming you have the user object available
@@ -88,7 +98,7 @@ app.post('/login', (req, res) => {
     return res.status(400).json({ message: 'Password must be at least 6 characters' });
   }
 
-  connectionPool.query("SELECT * FROM discussionusers WHERE Email = ? AND user_pass = ?", [email, password], (error, results, fields) => {
+  connectionPool.query("SELECT * FROM discussionusers WHERE email = ? AND user_pass = ?", [email, password], (error, results, fields) => {
     if (error) {
       console.error('Error occurred while connecting to the database' + JSON.stringify(error));
       return res.status(500).json({ message: 'Internal server error' });
@@ -101,7 +111,8 @@ app.post('/login', (req, res) => {
       req.session.user = {
         email: email,
         isLoggedIn: true,
-        userId: results[0].user_ID // Set the user ID from the query result
+        userId: results[0].user_ID,
+        userName: results[0].user_name // Set the user ID from the query result
       };
       res.redirect('/forum');
     } else {
@@ -133,13 +144,13 @@ app.get('/forum', (req, res) => {
 // Create a new thread
 app.post('/threads', (req, res) => {
   const { title, content } = req.body;
-  const user_ID = req.session.user.userId; // Assuming the user ID is stored in req.session.user.userId
+  const user_name= req.session.user.userName; // Assuming the user ID is stored in req.session.user.userId
   const date = new Date(); // Add the current date and time
 
   // Insert the new thread into the database
   connectionPool.query(
-    'INSERT INTO threads (title, content, user_ID, date) VALUES (?, ?, ?, ?)',
-    [title, content, user_ID, date],
+    'INSERT INTO threads (title, content, user_name, date) VALUES (?, ?, ?, ?)',
+    [title, content, user_name, date],
     (error, results, fields) => {
       if (error) {
         console.error('Error occurred while creating a new thread:', error);

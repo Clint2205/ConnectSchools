@@ -20,9 +20,10 @@ $(document).ready(function() {
     var formData = {
       title: document.getElementById('title').value,
       content: document.getElementById('content').value,
-      userId: '<%= user.user_ID %>' // Get the user ID from the server-side rendering
+      user_ID: '<%= user.userId %>', // Get the user ID from the server-side rendering
+      user_name: '<%= user.userName %>' // Get the user's name from the session
     };
-
+    
     // Send the form data via AJAX
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/threads');

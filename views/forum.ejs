@@ -110,10 +110,9 @@
                         <p>
                           <%= threads[i].content %>
                         </p>
-                        <p>Posted by: <%= threads[i].user_ID %>
+                        <p>Posted by: <%= threads[i].user_name %>
                         </p>
-                        <p>Date: <%= threads[i].date %>
-                        </p> <!-- Add this line to display the date -->
+                        <p>Date: <%= threads[i].date.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' }) %></p>
                       </div>
                       <% } %>
                         <button id="show-more-btn">Show More</button>
@@ -168,48 +167,57 @@
 
 
 
-
+ 
               <footer class="text-center text-white" style="background-color: #f1f1f1;">
                 <!-- Grid container -->
                 <div class="container pt-4">
                   <!-- Section: Social media -->
                   <section class="mb-4">
                     <!-- Facebook -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-                      href="https://www.facebook.com/connect.nursery?locale=en_GB" role="button"
-                      data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-
+                    <a
+                      class="btn btn-link btn-floating btn-lg text-dark m-1"
+                      href="https://www.facebook.com/connect.nursery?locale=en_GB"
+                      role="button"
+                      data-mdb-ripple-color="dark"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+              
                     <!-- Twitter -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                      data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-
-                    <!-- Google -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                      data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
-
+                    <a
+                      class="btn btn-link btn-floating btn-lg text-dark m-1"
+                      href="#!"
+                      role="button"
+                      data-mdb-ripple-color="dark"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+              
+                    
+              
                     <!-- Instagram -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                      data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
-
-                    <!-- Linkedin -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                      data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-                    <!-- Github -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                      data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                    <a
+                      class="btn btn-link btn-floating btn-lg text-dark m-1"
+                      href="#!"
+                      role="button"
+                      data-mdb-ripple-color="dark"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+              
+                    
+                   
                   </section>
                   <!-- Section: Social media -->
                 </div>
                 <!-- Grid container -->
-
+              
                 <!-- Copyright -->
-                <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                  © 2023 Copyright:
-                  <a class="text-dark" href="#"></a>
-                </div>
-                <!-- Copyright -->
-              </footer>
-
+                <footer>
+                  <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 
+                    <a class="text-dark" href="https://www.connectschoolsuganda.org">www.connectschoolsuganda.org</a>
+                  </div>
+                  <!-- Copyright -->
+                </footer>
+                
 
               <script src="forum.js"></script>
 
