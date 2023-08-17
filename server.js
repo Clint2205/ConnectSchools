@@ -17,7 +17,7 @@ app.set('views', './views');
 // Get the logout message from the session
 const connectionPool = mysql.createPool({
   connectionLimit: 1,
-  host: 'localhost',
+  host: '116.203.88.211',
   user: 'MbuyaConnect',
   password: 'Sophia54321£',
   database: 'forum_users',
