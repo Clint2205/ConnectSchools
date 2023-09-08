@@ -39,6 +39,7 @@ $(document).ready(function() {
         // Handle the response from the server
         // alert('Logged in successfully!');
         window.location.href = '/forum';
+        loginForm[0].reset();
       },
       error: function(jqXHR, textStatus, errorThrown) {
         // Handle errors
@@ -53,6 +54,22 @@ $(document).ready(function() {
     });
   });
 });
+function isPasswordValid(password) {
+  // Password validation logic
+  if (password.length < 8) {
+    return false;
+  }
+  if (!/[A-Z]/.test(password)) {
+    return false;
+  }
+  if (!/[a-z]/.test(password)) {
+    return false;
+  }
+  if (!/[0-9]/.test(password)) {
+    return false;
+  }
+  return true;
+}
 
 
 $(document).ready(function() {
@@ -63,6 +80,22 @@ $(document).ready(function() {
     // Get the form data
     var formData = $(this).serialize();
 
+    // Get the password input
+    var password = $('#password').val();
+
+    // Perform password validation
+    if (!isPasswordValid(password)) {
+      // Display an error message or handle invalid password
+      $('#password-error').text('Password does not meet the requirements.');
+      $('#register-form')[0].reset();
+      setTimeout(function () {
+        $('#password-error').text(''); // Clear the password error message
+        
+      }, 5000);
+        
+      return;
+    }
+
     // Send the AJAX request
     $.ajax({
       type: 'POST',
@@ -72,16 +105,21 @@ $(document).ready(function() {
       success: function(response) {
         // Handle the response from the server
         $('#register-form').html('<p class="success-message">Registered successfully!</p>');
+        // Reset the form
+        $('#register-form')[0].reset();
+        $('#password-error').text(''); // Clear the password error message
+
       },
       error: function(jqXHR, textStatus, errorThrown) {
         // Handle errors
-        //alert('Error: ' + textStatus + ' - ' + errorThrown);
-        $('#register-form').html('<p class="success-message">Registration unsuccessfull!</p>');
+        // alert('Error: ' + textStatus + ' - ' + errorThrown);
+        $('#register-form').html('<p class="success-message">Registration unsuccessful!</p>');
       }
     });
   });
+
+
 });
 
-  
  
  

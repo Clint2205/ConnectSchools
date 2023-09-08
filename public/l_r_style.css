@@ -5,162 +5,150 @@
 }
 
 .hidden {
-  display: none
+  display: none;
 }
 
-
-  body{
-    
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(-45deg,#7f379b,#ffa26c);
+body {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #7f379b, #ffa26c);
 }
-
-
 
 .masthead {
-    background-size:contain;
-    background-position: center;
-    height: 120px; /* set a height for the header */
-  }
-  
- 
-  
-  .navbar {
-    background-color: #343a40; /* set the background color of the navbar */
-  }
-  
-  .navbar-brand {
-    font-size: 2rem; /* increase the font size of the navbar brand */
-    color: #fff; /* set the color of the navbar brand */
-  }
-  
-  .navbar-nav li {
-    margin-right: 10px; /* add some space between the nav items */
-  }
-  
-  .nav-link {
-    color: #fff; /* set the color of the nav links */
-  }
-  
-  #login-btn,
-  #register-btn {
-    background-color: #fff; /* set the background color of the buttons */
-    border: none;
-    color: #0b0a0a; /* set the color of the buttons */
-    padding: 8px 20px; /* add some padding to the buttons */
-    border-radius: 5px; /* round the corners of the buttons */
-    cursor: pointer; /* change the cursor to a pointer when hovering over the buttons */
-  }
-  
-  #login-btn:hover,
-  #register-btn:hover {
-    background-color: #0069d9; /* change the background color of the buttons on hover */
-  }
+  background-size: contain;
+  background-position: center;
+  height: 120px;
+}
 
+.navbar {
+  background-color: #343a40;
+}
 
-  form {
-    
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #060404;
-    border-radius: 5px;
-    background-color: #a82626;
-    box-shadow: 0px 0px 5px 0px rgba(75, 5, 5, 0.3);
-    width: 50%;
-   
-  }
-  #login-form {
-    margin: 0 auto; /* center the form horizontally */
-    text-align: center; /* center the form elements */
-  }
-  #register-form {
-    margin: 0 auto; /* center the form horizontally */
-    text-align: center; /* center the form elements */
-  }
- #threading{
+.navbar-brand {
+  font-size: 2rem;
+  color: #fff;
+}
 
-    width: 100%;
+.navbar-nav li {
+  margin-right: 10px;
+}
 
-  }
- 
+.nav-link {
+  color: #fff;
+}
 
-  h2 {
-    text-align:center;
+#login-btn,
+#register-btn {
+  background-color: #fff;
+  border: none;
+  color: #0b0a0a;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #241515;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  input[type="submit"] {
-    background-color: #fff;
-    color:black;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #fff;
-    
-  }
-  
-  .hidden {
-    display: none;
-  }
+#login-btn:hover,
+#register-btn:hover {
+  background-color: #0069d9;
+}
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .container > div {
-    margin-bottom: 20px;
-  }
-  
-  .container span {
-    display: block;
-    margin-top: 5px;
-    font-size: 15px;
-    text-align: center;
-    
-  }
+#login p a {
+  color: #fff;
+}
 
-  .success-message {
-    color: whitesmoke;
-    font-weight: bold;
-  }
-  .error-message {
-    color: black;
-    font-weight: bold;
-    font-size: large;
-    text-align:center;
-  }
-  
-  
+#login p a:hover {
+  background-color: #0b0a0a;
+}
 
-  footer {
-    margin-top: 260px;
-  }
-  
-  
+form {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #060404;
+  border-radius: 5px;
+  background-color: #a82626;
+  box-shadow: 0px 0px 5px 0px rgba(75, 5, 5, 0.3);
+  width: 80%; /* Adjust form width for smaller screens */
+  max-width: 400px; /* Limit the maximum width of the form */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #241515;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: #fff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.container > div {
+  margin-bottom: 20px;
+}
+
+.container span {
+  display: block;
+  margin-top: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.success-message {
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.error-message {
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px; /* Adjust margin for smaller screens */
+}
+
+/* Remove bullet points from the password requirements list */
+#password-requirements ul {
+  list-style: none;
+  padding-left: 0;
+  color: #fff;
+}
+
+#password-requirements ul li:before {
+  content: '';
+}
