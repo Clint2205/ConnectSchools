@@ -39,7 +39,7 @@ let sections = [
       title: "Classes",
       images: [
         { src: "images/pic9.jpg", alt: "Studies Image 1" },
-        { src: "images/pic10.jpg", alt: "Studies Image 2" },
+        { src: "images/pic28.jpg", alt: "Studies Image 2" },
         { src: "images/pic11.jpg", alt: "Studies Image 3" },
         { src: "images/pic13.jpg", alt: "Studies Image 3" }
       ]

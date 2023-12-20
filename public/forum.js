@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 });
 
-// Add an event listener to the form submit button
+/
 // Add an event listener to the form submit button
 document.getElementById('thread-form').addEventListener('submit', function (event) {
   event.preventDefault(); // Prevent the default form submission behavior
