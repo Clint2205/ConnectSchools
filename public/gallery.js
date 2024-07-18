@@ -14,7 +14,11 @@ let sections = [
         { src: "images/pic1.jpg", alt: "Sport Image 1" },
         { src: "images/pic2.jpg", alt: "Sport Image 2" },
         { src: "images/pic3.jpg", alt: "Sport Image 3" },
-        { src: "images/pic4.jpg", alt: "Sport Image 3" }
+        { src: "images/pic4.jpg", alt: "Sport Image 3" },
+        { src: "images/IMG-20240712-WA0014.jpg", alt: "Sport Image 1" },
+        { src: "images/IMG-20240712-WA0015.jpg", alt: "Sport Image 2" },
+        { src: "images/IMG-20240712-WA0016.jpg", alt: "Sport Image 3" },
+        { src: "images/IMG-20240712-WA0017.jpg", alt: "Sport Image 3" }
       ]
     },
     {
@@ -23,7 +27,11 @@ let sections = [
         { src: "images/pic5.jpg", alt: "Dance Image 1" },
         { src: "images/pic6.jpg", alt: "Dance Image 2" },
         { src: "images/pic7.jpg", alt: "Dance Image 3" },
-        { src: "images/pic8.jpg", alt: "Dance Image 3" }
+        { src: "images/pic8.jpg", alt: "Dance Image 3" },
+        { src: "images/IMG-20240712-WA0018.jpg", alt: "Dance Image 1" },
+        { src: "images/IMG-20240712-WA0019.jpg", alt: "Dance Image 2" },
+        { src: "images/IMG-20240712-WA0020.jpg", alt: "Dance Image 3" },
+        { src: "images/IMG-20240712-WA0021.jpg", alt: "Dance Image 3" },
       ]
     },
     {
@@ -32,7 +40,11 @@ let sections = [
         { src: "images/pic12.jpg", alt: "Drama Image 1" },
         { src: "images/pic14.jpg", alt: "Drama Image 2" },
         { src: "images/pic15.jpg", alt: "Drama Image 3" },
-        { src: "images/pic16.jpg", alt: "Drama Image 3" }
+        { src: "images/pic16.jpg", alt: "Drama Image 3" },
+        { src: "images/IMG-20240712-WA0022.jpg", alt: "Dance Image 1" },
+        { src: "images/IMG-20240712-WA0023.jpg", alt: "Dance Image 2" },
+        { src: "images/IMG-20240712-WA0024.jpg", alt: "Dance Image 3" },
+        { src: "images/IMG-20240712-WA0025.jpg", alt: "Dance Image 3" },
       ]
     },
     {
@@ -41,7 +53,12 @@ let sections = [
         { src: "images/pic9.jpg", alt: "Studies Image 1" },
         { src: "images/pic28.jpg", alt: "Studies Image 2" },
         { src: "images/pic11.jpg", alt: "Studies Image 3" },
-        { src: "images/pic13.jpg", alt: "Studies Image 3" }
+        { src: "images/pic13.jpg", alt: "Studies Image 3" },
+        { src: "images/IMG-20240712-WA0026.jpg", alt: "Dance Image 1" },
+        { src: "images/IMG-20240712-WA0027.jpg", alt: "Dance Image 2" },
+        { src: "images/IMG-20240712-WA0028.jpg", alt: "Dance Image 3" },
+        { src: "images/IMG-20240712-WA0029.jpg", alt: "Dance Image 3" },
+      
       ]
     }
   ];

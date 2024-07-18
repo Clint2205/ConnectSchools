@@ -38,6 +38,7 @@ connectionPool.getConnection((err, connection) => {
   }
   console.log('Connected to the database successfully');
   app.listen(8080);
+  console.log('Server started on localhost 8080');
 
   connection.release();
 });
